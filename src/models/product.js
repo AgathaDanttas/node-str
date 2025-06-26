@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+//o schema cria o _id automaticamente 
 const schema = new Schema({
     title: {
         type: String,
@@ -12,7 +13,7 @@ const schema = new Schema({
     },
     slug: {
         type: String,
-        required: true,
+        required: [true, 'o slug é obrigatório'],
         trim: true,
         index: true,
         unique:true
